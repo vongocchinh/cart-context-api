@@ -25,4 +25,5 @@ export const initialState = {
     product: products,
     cart: data?data:[],
   },
+  detail:{}
 };

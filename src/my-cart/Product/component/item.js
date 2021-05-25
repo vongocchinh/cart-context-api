@@ -13,6 +13,7 @@ import { CartContext } from "./../../cart/Context/CartContext";
 import * as types from './../../cart/constant/cart';
 import { FORMAT_CURRENT } from "../constant/product";
 import { ModeContext } from './../../app/context/ModeContext';
+import { Link } from 'react-router-dom';
 
 export default function Item({ value }) {
   const {
@@ -65,7 +66,9 @@ const addCart = () => {
     <>
       <Card className="card">
         <CardActionArea>
+          <Link to={"/product-detail/"+value.id}>
           <img alt="###" src={value.img} className="img-product" />
+          </Link>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h4">
               <p style={style}>{value.name}</p>
