@@ -1,0 +1,139 @@
+.card {
+    max-width: 210px;
+    margin: 10px;
+}
+
+* {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container-top {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+    margin-top: 10px;
+}
+.container {
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+}
+
+/* .paper {
+    width: 250px;
+    height: 300px;
+    padding: 20px;
+    border: 1px solid black;
+} */
+
+.grow {
+    flex-grow: 1;
+}
+
+.img-product {
+    width: 200px;
+    height: 200px;
+}
+
+.paper-table {
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    max-width: 100%;
+    min-width: 800px;
+    overflow-y: auto;
+}
+table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    /* border:  1px solid rgb(191, 177, 177); */
+    border-radius: 10px;
+}
+table tr th,
+td {
+    text-align: center;
+    width: 20%;
+    /* border:  1px solid rgb(184, 173, 173); */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container-top .header {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.container-top .header .link {
+    margin-right: 10px;
+    text-decoration: none;
+    background-color: rgb(4, 4, 14);
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+.option-cart {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.paper {
+    width: 50px;
+    height: 50px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+.CardActions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card p{
+    font-size: 19px;
+    text-transform: capitalize;
+}
+.container-total{
+    margin-top: 20px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    /* justify-content: end; */
+    padding-bottom: 30px;
+}
+
+.paper-container-total{
+    width: 300px;
+}
+.paper-container-total table{
+    width: 100%;
+}
+.paper-container-total th,.paper-container-total td{
+    width: 200px;
+    text-align: left;
+}
+
+.quantity-header{
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 20px;
+    font-weight: 600;
+    color: red;
+    font-size: 18px;
+}
