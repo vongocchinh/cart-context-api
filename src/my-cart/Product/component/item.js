@@ -12,6 +12,7 @@ import { CartContext } from "./../../cart/Context/CartContext";
 
 import * as types from './../../cart/constant/cart';
 import { FORMAT_CURRENT } from "../constant/product";
+import { ModeContext } from './../../app/context/ModeContext';
 
 export default function Item({ value }) {
   const {
@@ -56,6 +57,10 @@ const addCart = () => {
     }
     return k;
   };
+  const {mode}=useContext(ModeContext);
+  const style={
+    color:mode?"black":"#ed4b82"
+  }
   return (
     <>
       <Card className="card">
@@ -63,15 +68,15 @@ const addCart = () => {
           <img alt="###" src={value.img} className="img-product" />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h4">
-              <p>{value.name}</p>
+              <p style={style}>{value.name}</p>
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions className="CardActions">
-          <Button size="small" color="primary">
+          <Button style={style} size="small" color="primary">
             {FORMAT_CURRENT(value.price)} $
           </Button>
-          <Button onClick={addCart} variant="contained" size="small"  color="primary">
+          <Button  onClick={addCart} variant="contained" size="small"  color="primary">
             <ShoppingCartIcon size="small" />
           </Button>
         </CardActions>

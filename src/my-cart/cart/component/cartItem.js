@@ -5,6 +5,7 @@ import * as types from "./../constant/cart";
 import { Paper } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
 import { FORMAT_CURRENT } from "../../Product/constant/product";
+import { ModeContext } from './../../app/context/ModeContext';
 export default function CartItem({ value }) {
   const {
     state: {
@@ -22,6 +23,11 @@ export default function CartItem({ value }) {
       payload: cart,
     });
   };
+
+  const {mode}=useContext(ModeContext);
+  const style={
+    color:mode?"black":"#ed4b82"
+  }
   var findIndex = (data, id) => {
     var k = -1;
     for (let i = 0; i < data.length; i++) {
@@ -56,16 +62,16 @@ export default function CartItem({ value }) {
   };
   return (
     <>
-      <tr>
+      <tr style={style}>
         <td>{value.product.name}</td>
         <td>
           <img alt="###" src={value.product.img} />
         </td>
         <td>
           <div className="option-cart">
-            <Paper className="paper" onClick={onIntroduct}>-</Paper>
+            <Paper style={style} className="paper" onClick={onIntroduct}>-</Paper>
             {value.quantity}
-            <Paper className="paper" onClick={onCrease}>+</Paper>
+            <Paper style={style} className="paper" onClick={onCrease}>+</Paper>
           </div>
         </td>
         <td>{FORMAT_CURRENT(types.Total(value.quantity,value.product.price))} $</td>
