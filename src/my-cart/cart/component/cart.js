@@ -6,9 +6,8 @@ import { Paper } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { FORMAT_CURRENT } from "../../Product/constant/product";
 import { total_cart } from "../constant/cart";
-import { total_quantity } from './../constant/cart';
-import { ModeContext } from './../../app/context/ModeContext';
-
+import { total_quantity } from "./../constant/cart";
+import { ModeContext } from "./../../app/context/ModeContext";
 export default function Cart() {
   const {
     state: {
@@ -25,10 +24,10 @@ export default function Cart() {
 
     return result;
   };
-  const {mode}=useContext(ModeContext);
-  const style={
-    color:mode?"black":"#ed4b82"
-  }
+  const { mode } = useContext(ModeContext);
+  const style = {
+    color: mode ? "black" : "#ed4b82",
+  };
   return (
     <>
       <div className="container">
@@ -40,7 +39,7 @@ export default function Cart() {
                 <th>Anh Sản Phẩm</th>
                 <th>Số Lượng</th>
                 <th>Tổng Tiền</th>
-                <th style={{width:100}}></th>
+                <th style={{ width: 100 }}></th>
               </tr>
             </thead>
             <tbody>{showProduct(cart)}</tbody>
@@ -59,7 +58,9 @@ export default function Cart() {
               </tr>
               <tr>
                 <th>
-                  <Button variant="contained" color="primary">Thanh Toán</Button>
+                  <Button variant="contained" color="primary">
+                    Thanh Toán
+                  </Button>
                 </th>
               </tr>
             </table>
